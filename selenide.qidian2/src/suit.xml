@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="qidian" parallel="tests" thread-count="1">
+	<test name="test1">
+		<classes>
+			<class name="com.liu.test.BeforeTest" />
+			<class name="com.liu.test.LoginTest" />
+			<class name="com.liu.test.BusinessTest">
+				<methods >
+					<include name="search"></include>
+					<include name="addToBookshelves"></include>
+					<include name="checkBookshelves"></include>
+				</methods>
+			</class>
+			<class name="com.liu.test.AfterTest" />
+		</classes>
+	</test>
+	<listeners>
+		<listener class-name="com.liu.utils.ExtentTestNGIReporterListener"></listener>
+	</listeners>
+
+</suite> 
